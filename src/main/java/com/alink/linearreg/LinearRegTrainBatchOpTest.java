@@ -11,6 +11,7 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 public class LinearRegTrainBatchOpTest {
+
     @Test
     public void testLinearRegTrainBatchOp() throws Exception {
         List <Row> df = Arrays.asList(
@@ -32,14 +33,14 @@ public class LinearRegTrainBatchOpTest {
                 .setPredictionCol("pred");
         predictor.linkFrom(model, batchData).print();
 
-        //5、保存训练结果
+        //保存训练结果
         CsvSinkBatchOp csvSink = new CsvSinkBatchOp();
-        csvSink.setFilePath("E:\\Flink\\FlinkSql\\FlinkML\\model\\testGbdtRegPredictStreamOp");
+        csvSink.setFilePath("src/main/resources/model/LinearRegPredict");
         predictor.link(csvSink);
 
-        //6、保存模型
+        //保存模型
         AkSinkBatchOp csvSink1 = new AkSinkBatchOp();
-        csvSink1.setFilePath("E:\\Flink\\FlinkSql\\FlinkML\\model\\testGbdtRegPredictStreamOpModel");
+        csvSink1.setFilePath("src/main/resources/model/LinearRegPredictModel");
         model.link(csvSink1);
 
         BatchOperator.execute();

@@ -8,10 +8,16 @@ import com.alibaba.alink.operator.batch.source.AkSourceBatchOp;
 import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
+
+
+
 public class LinearRegPredictBatchOpTest {
+
+
     @Test
     public void testLinearRegPredictBatchOp() throws Exception {
-        String filePath = "E:\\Flink\\FlinkSql\\FlinkML\\model\\testGbdtRegPredictStreamOpModel";
+
+        String filePath = "src/main/resources/model/LinearRegPredictModel";
 
         AkSourceBatchOp model = new AkSourceBatchOp().setFilePath(filePath);
 
