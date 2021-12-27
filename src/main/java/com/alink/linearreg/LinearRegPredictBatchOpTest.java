@@ -20,7 +20,7 @@ public class LinearRegPredictBatchOpTest {
         String filePath = "src/main/resources/model/LinearRegPredictModel";
 
         AkSourceBatchOp model = new AkSourceBatchOp().setFilePath(filePath);
-
+    
         List <Row> df = Arrays.asList(
                 Row.of(2, 1),
                 Row.of(3, 2),
