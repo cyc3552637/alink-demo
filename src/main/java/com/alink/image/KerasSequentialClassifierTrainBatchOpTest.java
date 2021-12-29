@@ -44,13 +44,6 @@ public class KerasSequentialClassifierTrainBatchOpTest {
                 .linkFrom(trainBatchOp, source);
         predictBatchOp.lazyPrint(10);
         BatchOperator.execute();
-//        TFTableModelPredictBatchOp tfTableModelPredictBatchOp = new TFTableModelPredictBatchOp()
-//                .setOutputSchemaStr("logits double")
-//                .setOutputSignatureDefs(new String[]{"logits"})
-//                .setSignatureDefKey("predict")
-//                .setSelectedCols("label")
-//                .linkFrom(trainBatchOp, source);
-//        tfTableModelPredictBatchOp.print();
     }
 
 }
