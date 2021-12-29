@@ -20,6 +20,8 @@ public class ReadImageToTensorBatchOpTest {
                 .setRootFilePath("src/main/resources/animal_photos")
                 .setOutputCol("tensor")
                 .setRelativeFilePathCol("path")
+                .setImageHeight(150)
+                .setImageWidth(150)
                 .linkFrom(memSourceBatchOp)
                 .print();
         CsvSinkBatchOp csvSink = new CsvSinkBatchOp();
